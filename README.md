@@ -39,4 +39,4 @@ Start up the bridging server
 ## Way of Working
 
 [Click
-Here](/docs/general/sprint0/WoW.md)
+Here](/docs/sprint0/WoW.md)
