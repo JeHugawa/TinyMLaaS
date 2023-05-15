@@ -1,6 +1,8 @@
 # Summer 2023 project, Way of Working
 
 ## Time tracking
+[Click here]
+(https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit?usp=sharing)
 
 ## Communication
 
@@ -25,5 +27,5 @@
 ## Product Backlog
 
 ## Team Sprint Backlog
-[Click Here](https://github.com/users/JeHugawa/projects/1/views/1)
+[Click here](https://github.com/users/JeHugawa/projects/1/views/1)
 
