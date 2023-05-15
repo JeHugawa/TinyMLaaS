@@ -1,8 +1,7 @@
 # Summer 2023 project, Way of Working
 
 ## Time tracking
-[Click here]
-(https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit?usp=sharing)
+[Click here](https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit?usp=sharing)
 
 ## Communication
 
