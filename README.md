@@ -36,7 +36,7 @@ Start up the bridging server
 
 `python main.py`
 
-## Working hours tracking
+## Way of Working
 
 [Click
-Here](https://docs.google.com/spreadsheets/d/1DNoNf4glcuMxKoVzHVrFo-MktmsVji1wf4IHeraWH84/edit#gid=443489686)
+Here](/docs/general/sprint0/WoW.md)
