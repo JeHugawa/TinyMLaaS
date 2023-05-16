@@ -40,3 +40,9 @@ Start up the bridging server
 
 [Click
 Here](/docs/sprint0/WoW.md)
+
+## Project progress
+
+[Product backlog](https://github.com/users/JeHugawa/projects/2/views/1)
+
+[Working hours](https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit#gid=1517018599)
