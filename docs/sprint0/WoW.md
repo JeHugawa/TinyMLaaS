@@ -16,6 +16,7 @@
 - Max lifetime of branch is 1 week
 - No one is allowed to merge their own branch
 - No hero coding!
+- Clear output (tests etc) from Notebook before pushing
 
 ## Definition of Done
 - Code works on staging server
