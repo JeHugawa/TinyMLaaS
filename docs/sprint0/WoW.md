@@ -17,7 +17,8 @@
 - No one is allowed to merge their own branch
 - No hero coding!
 - Clear output (tests etc) from Notebook before pushing
-
+- Double quotes " " for Python, in honor of C/C++
+- 
 ## Definition of Done
 - Code works on staging server
 - Code is reviewed
