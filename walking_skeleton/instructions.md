@@ -1,10 +1,14 @@
 ### Locally
 
+define backend url in a .env file
+BACKEND_URL="http://localhost:8000"
+
 start backend
 ```uvicorn main:app --reload```
 
 start frontend
 ``` streamlit run /frontend/main_page.py```
+
 
 ### Run in container
 
