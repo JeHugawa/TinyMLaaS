@@ -5,49 +5,39 @@ from pydantic import BaseModel
 from fastapi import FastAPI
 
 
-class Item(BaseModel):
+class Model(BaseModel):
     name: str
-    description: str | None = None
-    price: float
-    tax: float | None = None
+    description: str
 
 
 class ModelName(str, Enum):
-    tumenet = "tumenet"
-    some = "somenet"
-    ase = "asenet"
+    facerecognition = "Face Recognition"
+    carrecognition = "Car Recognition"
 
+
+models = {0: {"name": None, "description": None}}
 
 app = FastAPI()
 
 backend_url = "http://127.0.0.1:8000"
-@app.get("/")
-async def routed():
-    return {"Hello": "world"}
+
 
 @app.post("/item/")
-async def create_item(item: Item):
-    return Item
+async def create_item(model: Model):
+    models[1] = {"name": model.name, "description": model.description}
+    return {"message": "Model added"}
 
 
-@app.get("/models/{model_name}")
-async def read_model(model_name: ModelName):
-    if model_name is ModelName.tumenet:
-        return {"model_name": model_name, "message": "Lets go"}
+@app.get("/models/")
+async def read_model(model_name: ModelName | None = None,
+                     model_id: int = 0):
+    if model_name is ModelName.facerecognition:
+        return {"model_name": model_name,
+                "message": "Model for recognizing faces"}
 
-    if model_name.value == "somenet":
-        return {"model_name": model_name, "message": "Some"}
+    if model_name is ModelName.carrecognition:
+        return {"model_name": model_name,
+                "message": "Model for detecting cars"}
 
-    return {"model_name": model_name, "message": "asettaja"}
-
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str | None = None, long: bool = True):
-    item = {"item_id": item_id}
-    if q:
-        return {"item_id": item_id, "q": q}
-    if long:
-        item.update(
-            {"item_id": 34567890987654321}
-        )
-    return item
+    return {"model": models[model_id]["name"],
+            "description": models[model_id]["description"]}
