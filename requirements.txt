@@ -14,7 +14,6 @@ awscli
 pyserial
 pyusb
 docker
-flask
 
 # Dev
 pytest
