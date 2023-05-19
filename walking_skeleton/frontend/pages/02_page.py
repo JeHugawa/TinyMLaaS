@@ -1,7 +1,7 @@
 import streamlit as st 
 import requests
 
-backend_url = "http://0.0.0.0:8000"
+backend_url = "http://backend:8000/"
 
 
 if st.button("hae"):
