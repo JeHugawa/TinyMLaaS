@@ -4,6 +4,9 @@
 [Click here](https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit?usp=sharing)
 
 ## Communication
+- online communication happens in Discord
+- Scrum master is responsible with communicating with the customer
+- Daily each day
 
 ## Srum practices
 - Sprint time 1 week
