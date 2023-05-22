@@ -4,11 +4,13 @@ import time
 
 from tflm_hello_world.compiling import convert_model, convert_to_c_array, plot_size, convert_model_to_cc
 
+
 def page_info(title):
     col = st.columns(4)
     col[0].title(title)
     with col[-1].expander("ℹ️ Help"):
-        st.markdown("On this page you can compile a trained model to the format used by the TinyML devices.")
+        st.markdown(
+            "On this page you can compile a trained model to the format used by the TinyML devices.")
         st.markdown("Click the Compile button to compile the model")
         st.markdown("[See the doc page for more info](/Documentation)")
 
@@ -40,14 +42,17 @@ def add_compiled_model(model_path):
     model_name = st.session_state["selected_model_type"]
     st.session_state["compiled_models"][model_name] = model_path
 
+
 def compilation_tab():
     if "selected_model" not in st.session_state:
         st.error("No model was selected. Please select one in the model tab")
         return
-    model_path = st.session_state.selected_model["Model Path"] 
+    model_path = st.session_state.selected_model["Model Path"]
     # Define the compilation settings tab
     st.subheader("Compilation Settings")
-    quant = st.selectbox("Quantization", ["no quantization", "quantization", "end-to-end 8bit quantization"])
+    st.write(":red[Quantization choosing does nothing]")
+    quant = st.selectbox("Quantization", [
+                         "no quantization", "quantization", "end-to-end 8bit quantization"])
     if quant:
         generate = st.selectbox("Generate C array model", ["Yes", "No"])
         if generate:
@@ -57,7 +62,8 @@ def compilation_tab():
             start = st.button("Compile")
             if start:
                 with st.spinner("Compiling..."):
-                    convert_model(st.session_state.train_ds, model_path, st.session_state.model)
+                    convert_model(st.session_state.train_ds,
+                                  model_path, st.session_state.model)
                     if generate == "Yes":
                         convert_model_to_cc(model_path)
                 st.write("Compilation complete!")
@@ -69,7 +75,7 @@ def compilation_tab():
 # Define the main function that runs the Streamlit app
 def main():
     # Set the page title
-    st.set_page_config(page_title="ML Compilation",layout="wide")
+    st.set_page_config(page_title="ML Compilation", layout="wide")
 
     # Define the sidebar options
     st.sidebar.title("Options")
@@ -82,14 +88,19 @@ def main():
     compilation_tab()
 
     # Define the model validation tab
+    st.write(
+        ":red[Has no function, does nothing (runs Docker run ). Yes, just that]")
     st.subheader("Model Validation")
-    #Load model
-    #loss, acc = model.validate() etc.etc.
+    # Load model
+    # loss, acc = model.validate() etc.etc.
     test = st.button("Test the model using x86 simulation")
     if test:
         subprocess.run(['Docker run '], shell=True)
 
     # Allow users to compare models
+    st.write(
+        ":red[No actual comparing is done]"
+    )
     st.subheader("Compare Models")
     model_names = list(models.keys())
     model_names.remove(model_name)
@@ -97,8 +108,10 @@ def main():
     st.write(f"Comparing {model_name} with {compare_model_name}")
 
     # Define the model packaging tab
+    st.write(":red[Does nothing]")
     st.subheader("Model Packaging")
-    st.selectbox("Select the target architecture", ["x86", "Arm", "nRF52840(Arduino Nano)"])
+    st.selectbox("Select the target architecture", [
+                 "x86", "Arm", "nRF52840(Arduino Nano)"])
 
     # Define the packaging status tab
     with st.expander("Packaging Status"):
@@ -108,6 +121,7 @@ def main():
                 time.sleep(0.05)
                 st.progress(i + 1)
         st.write("Packaging complete!")
+
 
 # Run the app
 if __name__ == "__main__":

@@ -11,14 +11,15 @@ st.set_page_config(
     layout='wide'
 )
 
+
 def page_info(title):
     col = st.columns(4)
     col[0].title(title)
     with col[-1].expander("ℹ️ Help"):
         st.markdown("On this page you can connect to a bridging device.")
-        st.markdown("It will eventually also show an overview of connected devices.")
+        st.markdown(
+            "It will eventually also show an overview of connected devices.")
         st.markdown("[See the doc page for more info](/Documentation)")
-
 
 
 state = st.session_state
@@ -110,27 +111,25 @@ def handle_select(id, name, connection, installer, compiler, model, description)
         "Installer": installer,
         "Compiler": compiler,
         "Model": model,
-        "Description": description 
+        "Description": description
     }
     state.selected_device = device_data
     st.success(f"Selected device: **{name}**")
 
 
 def list_devices():
-    
-    
-    
+
     st.header('All registered devices')
     df = pd.read_csv('TinyMLaaS.csv')
     # Device name, Connection, Installer, Compiler, Model, Description
     col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
 
-    
     for row in df.sort_values("id").itertuples():
         index, id, name, connection, installer, compiler, model, description = row
         col = st.columns(10)
         col[0].write(id)
-        if "selected_device" in state and state.selected_device["id"] == id: # make selected device name bold
+        # make selected device name bold
+        if "selected_device" in state and state.selected_device["id"] == id:
             col[1].write("**"+name+"**")
         else:
             col[1].write(name)
@@ -154,7 +153,8 @@ def list_connected_devices():
     # List all connected devices
     devices = list(usb.core.find(find_all=True))
 
-    #Check if device is in ACCEPTED VENDORS
+    # Check if device is in ACCEPTED VENDORS
+    st.write(":red[Should show only raspberries or arduinos, does not work]")
     for device in devices:
         try:
             if usb.util.get_string(device, device.iManufacturer) not in ACCEPTED_VENDORS:
@@ -207,7 +207,6 @@ def device_page():
                 st.error('Invalid ip address for the bridging device 🚨')
                 response = ""
 
-                
     list_connected_devices()
     list_devices()
 
