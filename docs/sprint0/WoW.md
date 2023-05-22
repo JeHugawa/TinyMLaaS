@@ -21,7 +21,7 @@
 - No hero coding!
 - Clear output (tests etc) from Notebook before pushing
 - Double quotes " " for Python, in honor of C/C++
-- 
+
 ## Definition of Done
 - Code works on staging server
 - Code is reviewed
@@ -29,6 +29,8 @@
 - Code passes automated unit / Robot Framework testing
 
 ## Product Backlog
+
+[Click here](https://github.com/users/JeHugawa/projects/2)
 
 ## Team Sprint Backlog
 [Click here](https://github.com/users/JeHugawa/projects/1/views/1)
