@@ -4,6 +4,9 @@
 [Click here](https://docs.google.com/spreadsheets/d/1J1mJxM4wm9pnEoq1daXKhHpsEiAHHjz8Hl4N5ZgT6HM/edit?usp=sharing)
 
 ## Communication
+- online communication happens in Discord
+- Scrum master is responsible with communicating with the customer
+- Daily each day
 
 ## Srum practices
 - Sprint time 1 week
@@ -18,7 +21,7 @@
 - No hero coding!
 - Clear output (tests etc) from Notebook before pushing
 - Double quotes " " for Python, in honor of C/C++
-- 
+
 ## Definition of Done
 - Code works on staging server
 - Code is reviewed
@@ -26,6 +29,8 @@
 - Code passes automated unit / Robot Framework testing
 
 ## Product Backlog
+
+[Click here](https://github.com/users/JeHugawa/projects/2)
 
 ## Team Sprint Backlog
 [Click here](https://github.com/users/JeHugawa/projects/1/views/1)
