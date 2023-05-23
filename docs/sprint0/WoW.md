@@ -18,6 +18,7 @@
 - Feature branching
 - Max lifetime of branch is 1 week
 - No one is allowed to merge their own branch
+  - If you are only updating documentation and no code, commit is fine without PR.
 - No hero coding!
 - Clear output (tests etc) from Notebook before pushing
 - Double quotes " " for Python, in honor of C/C++
